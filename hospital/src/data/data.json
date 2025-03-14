@@ -1,0 +1,17 @@
+[
+    {
+        "lable":"jan ",
+        "revenue": 50,
+        "cost":16
+    },
+    {
+        "lable":"tue ",
+        "revenue": 11,
+        "cost":10
+    },
+    {
+        "lable":"wed",
+        "revenue": 39,
+        "cost":22
+    }
+]
