@@ -10,6 +10,7 @@ import ChartComponent from "./ChartComponent";
 const Body = () => {
   return (
     <div className="px-16  my-8">
+      
       <div>
         <h1 className="text-lg">
           Welcome,
@@ -38,7 +39,7 @@ const Body = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-evenly">
+      <div className="md:flex justify-evenly">
         <div>
           {" "}
           <div>

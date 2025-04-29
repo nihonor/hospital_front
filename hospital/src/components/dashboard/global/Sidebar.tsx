@@ -118,8 +118,8 @@ const Sidebar = () => {
               <div className="text-xl">
                 <CgProfile />
               </div>
-              <Link to="">Profile</Link>
-              {}
+              
+              {!collapse?<Link to="#">Profile</Link>:' '}
               
             </NavLink>
           </li>
@@ -139,7 +139,9 @@ const Sidebar = () => {
           <div className="text-xl">
             <IoLogOutOutline />
           </div>
-          Log out
+          
+          {!collapse ? <Link to="#">Log out</Link> : ' '}
+          
         </NavLink>
       </div>
     </div>
