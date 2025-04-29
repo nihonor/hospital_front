@@ -9,9 +9,9 @@ import ChartComponent from "./ChartComponent";
 
 const Body = () => {
   return (
-    <div className="px-16">
+    <div className="px-16  my-8">
       <div>
-        <h1 className="">
+        <h1 className="text-lg">
           Welcome,
           <span className="font-bold text-pr-color font-mono">
             D.HONORE Niyitanga

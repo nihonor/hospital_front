@@ -25,7 +25,9 @@ const Sidebar = () => {
               to="/dashboard"
               className={({ isActive }: { isActive: boolean }) =>
                 `flex items-center gap-3 ${
-                  isActive ? "text-pr-color" : "text-gray-500"
+                  isActive
+                    ? "text-pr-color border-r-4 border-pr-color "
+                    : "text-gray-500"
                 } hover:text-pr-color`
               }
             >
