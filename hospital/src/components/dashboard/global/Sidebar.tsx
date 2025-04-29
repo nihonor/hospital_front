@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdDashboard } from "react-icons/md";
 import { TbReport } from "react-icons/tb";
 import { CiStreamOn } from "react-icons/ci";
@@ -6,15 +6,34 @@ import { MdAutoGraph } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoLogOutOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 
 const Sidebar = () => {
+  const [collapse, setCollapse] = useState(false);
   return (
-    <div className="h-screen bg-white p-6 flex flex-col shadow-lg           ">
+    <div
+      className={`h-screen bg-white p-6 md:flex hidden flex-col shadow-lg transition-all duration-300 ${
+        collapse ? "w-20" : "w-64"
+      }`}
+    >
       {/* Logo */}
-      <div className="mb-12">
-        <h1 className="text-2xl">
-          <span className="text-pr-color font-bold">Hospital</span> logo
-        </h1>
+      <div className="mb-12 flex items-center gap-3">
+        {!collapse && (
+          <h1 className="text-2xl">
+            <span className="text-pr-color font-bold">Hospital</span> logo
+          </h1>
+        )}
+        {collapse ? (
+          <GoSidebarExpand
+            className="cursor-pointer text-xl"
+            onClick={() => setCollapse(false)}
+          />
+        ) : (
+          <GoSidebarCollapse
+            className="cursor-pointer text-xl"
+            onClick={() => setCollapse(true)}
+          />
+        )}
       </div>
 
       {/* Navigation Links */}
@@ -34,7 +53,7 @@ const Sidebar = () => {
               <div className="text-xl">
                 <MdDashboard />
               </div>
-              <Link to="/dashboard">Dashboard</Link>
+              {!collapse ? <Link to="/dashboard">Dashboard</Link> : " "}
             </NavLink>
           </li>
           <li>
@@ -49,7 +68,8 @@ const Sidebar = () => {
               <div className="text-xl">
                 <TbReport />
               </div>
-              <Link to="/appointment">Appointment request</Link>
+              {!collapse?<Link to="/appointment">Appointment request</Link>:' '}
+              
             </NavLink>
           </li>
           <li>
@@ -64,7 +84,9 @@ const Sidebar = () => {
               <div className="text-xl">
                 <CiStreamOn />
               </div>
-              Tables
+            
+            {!collapse?<Link to="#">Tables</Link>:' '}
+              
             </NavLink>
           </li>
           <li>
@@ -79,7 +101,9 @@ const Sidebar = () => {
               <div className="text-xl">
                 <MdAutoGraph />
               </div>
-              Articles
+              
+              {!collapse?<Link to="#">Articles</Link>:' '}
+              
             </NavLink>
           </li>
           <li>
@@ -94,7 +118,9 @@ const Sidebar = () => {
               <div className="text-xl">
                 <CgProfile />
               </div>
-              Profile
+              <Link to="">Profile</Link>
+              {}
+              
             </NavLink>
           </li>
         </ul>
